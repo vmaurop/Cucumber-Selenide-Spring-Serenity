@@ -79,7 +79,7 @@ test\resources\features             Cucumber features in gherkin
 
 
 
-####Other Clarifications:
+### Other Clarifications:
 - Test cases with @wip annotation are not ready yet, use tag "not @wip" in TestRunner
 - All classes that have getters/setters (under src/main/java/com/vmaurop/bdd/configuration) are updated to use lombok library.
 For lombok library following steps are done: maven dependency added, Intellij plugin installed and annotations @Getter @Setter are added.
