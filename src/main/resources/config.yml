@@ -1,0 +1,7 @@
+google:
+  url: https://www.google.com/
+  urlAPI: https://www.google.com/api
+  users:
+    admin:
+      userName: vaggelis
+      password: mavropoulos
