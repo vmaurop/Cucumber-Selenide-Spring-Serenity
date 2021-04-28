@@ -15,7 +15,7 @@
         <selenide.version>5.10.0</selenide.version>
         <lombok.version>1.18.12</lombok.version>
         <org.springframework.version>5.2.8.RELEASE</org.springframework.version>
-        <org.io.rest-assured.version>4.3.3</org.io.rest-assured.version>
+        <net.serenity.bdd>2.1.5</net.serenity.bdd>
     </properties>
 
     <build>
@@ -165,19 +165,7 @@
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-rest-assured</artifactId>
-            <version>2.3.31</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>json-path</artifactId>
-            <version>${org.io.rest-assured.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>${org.io.rest-assured.version}</version>
+            <version>${net.serenity.bdd}</version>
         </dependency>
 
 

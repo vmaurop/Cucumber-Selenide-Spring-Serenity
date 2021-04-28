@@ -7,7 +7,6 @@ import com.vmaurop.bdd.api.GoogleAPI;
 import com.vmaurop.bdd.configuration.GoogleConfig;
 import com.vmaurop.bdd.ui.home.MainMenu;
 import net.serenitybdd.core.Serenity;
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -26,7 +25,6 @@ public class HomeActionsUI extends AbstractSerenityClass implements HomeActions 
     private HomeActionsUI homeActionsUI;
 
 
-    @Step
     public void openApp(String applicationName) {
         switch (applicationName) {
             case "Google":
@@ -40,7 +38,7 @@ public class HomeActionsUI extends AbstractSerenityClass implements HomeActions 
     }
 
 
-    private void acceptAgreementPersonalData() {
+    public void acceptAgreementPersonalData() {
         if ($(MainMenu.ACCEPT_PERSONAL_DATA).isDisplayed()) {
             $(MainMenu.ACCEPT_PERSONAL_DATA).click();
         }

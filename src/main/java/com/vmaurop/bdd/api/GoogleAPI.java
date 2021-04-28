@@ -7,6 +7,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import net.serenitybdd.rest.SerenityRest;
+import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -15,6 +16,11 @@ public class GoogleAPI extends AbstractSerenityClass {
     @Autowired
     private GoogleConfig googleConfig;
 
+    private Response responseTodos;
+
+    public Response getResponseTodos() {
+        return responseTodos;
+    }
 
     public RequestSpecification getGenericApiReqSpec() {
         String baseUri = googleConfig.getUrlAPI().toString();
@@ -47,4 +53,21 @@ public class GoogleAPI extends AbstractSerenityClass {
     }
 
 
+    public void fakeRequest() {
+        responseTodos = SerenityRest
+                .given()
+                .baseUri("https://jsonplaceholder.typicode.com/todos/1")
+                .when().log().all().
+                        get()
+                .then().log().all()
+                .extract()
+                .response();
+    }
+
+    public void verifyResponse() {
+        Assert.assertEquals(1, responseTodos.jsonPath().getInt("userId"));
+        Assert.assertEquals(1, responseTodos.jsonPath().getInt("id"));
+        Assert.assertEquals("delectus aut autem", responseTodos.jsonPath().getString("title"));
+        Assert.assertFalse(responseTodos.jsonPath().getBoolean("completed"));
+    }
 }

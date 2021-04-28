@@ -7,10 +7,8 @@ import com.vmaurop.bdd.context.ScenariosContext;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Shared;
 import net.thucydides.core.annotations.Steps;
-import org.openqa.selenium.WebDriver;
 import utils.PropertiesFile;
 
 import java.io.IOException;
@@ -18,8 +16,6 @@ import java.util.Properties;
 
 
 public class GeneralStepDefs extends AbstractSerenityClass {
-    @Managed
-    WebDriver driver;
 
     @Steps
     private HomeActionsUI homeActionsUI;
