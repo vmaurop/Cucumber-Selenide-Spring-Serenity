@@ -10,6 +10,7 @@ import net.serenitybdd.core.Serenity;
 import net.thucydides.core.annotations.Steps;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class HomeActionsUI extends AbstractSerenityClass implements HomeActions {
@@ -39,9 +40,8 @@ public class HomeActionsUI extends AbstractSerenityClass implements HomeActions 
 
 
     public void acceptAgreementPersonalData() {
-        if ($(MainMenu.ACCEPT_PERSONAL_DATA).isDisplayed()) {
-            $(MainMenu.ACCEPT_PERSONAL_DATA).click();
-        }
+        $(MainMenu.ACCEPT_PERSONAL_DATA).waitUntil(visible, 3000);
+        $(MainMenu.ACCEPT_PERSONAL_DATA).click();
     }
 
 }
