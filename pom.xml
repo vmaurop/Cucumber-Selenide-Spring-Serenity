@@ -65,13 +65,6 @@
             <version>3.12.1</version>
         </dependency>
 
-        <!--Awaitility is a small Java DSL for synchronizing (waiting for) asynchronous operations-->
-        <dependency>
-            <groupId>org.awaitility</groupId>
-            <artifactId>awaitility</artifactId>
-            <version>3.1.6</version>
-        </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
