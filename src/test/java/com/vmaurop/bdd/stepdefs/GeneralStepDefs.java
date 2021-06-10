@@ -1,6 +1,7 @@
 package com.vmaurop.bdd.stepdefs;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.vmaurop.bdd.AbstractSerenityClass;
 import com.vmaurop.bdd.actions.home.HomeActionsUI;
 import com.vmaurop.bdd.context.ScenariosContext;
@@ -9,7 +10,7 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import net.thucydides.core.annotations.Shared;
 import net.thucydides.core.annotations.Steps;
-import utils.PropertiesFile;
+import utils.Files;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -25,7 +26,7 @@ public class GeneralStepDefs extends AbstractSerenityClass {
 
     @Before("@UI")
     public void setupUI() throws IOException {
-        Properties properties =  PropertiesFile.read("serenity.properties");
+        Properties properties =  Files.readProperties("serenity.properties");
         Configuration.browser = properties.getProperty("webdriver.driver");
         Configuration.startMaximized = true;
         Configuration.driverManagerEnabled = true;
@@ -43,7 +44,7 @@ public class GeneralStepDefs extends AbstractSerenityClass {
 
     @After("@UI")
     public void tearDownUI() {
-
+        Selenide.closeWebDriver();
     }
 
 

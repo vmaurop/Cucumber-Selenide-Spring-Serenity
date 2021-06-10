@@ -9,6 +9,6 @@ import org.junit.runner.RunWith;
         strict = false,
         features = {"src/test/resources/features/"},
         monochrome = true,
-        tags = {"(not @security) and (@UI or (not @UI and not @API))"},
+        tags = {"@TC-UI-EXAMPLE-001"},
         glue = {"com.vmaurop.bdd.stepdefs"})
 public class TestRunner { }
