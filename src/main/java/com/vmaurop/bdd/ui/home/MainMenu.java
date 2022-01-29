@@ -10,7 +10,7 @@ public final class MainMenu {
     }
 
 
-    public static final By HEADER_GOOGLE = By.xpath("//title[text()='Google']");
+    public static final By HEADER_GOOGLE = By.xpath("//div[@title='Google']");
     public static final By ACCEPT_PERSONAL_DATA = By.xpath("(//button//div[@role='none'])[2]");
 
 }
