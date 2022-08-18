@@ -18,18 +18,18 @@ public class HomeActionsUI extends AbstractSerenityClass implements HomeActions 
     @Steps
     GoogleAPI googleAPI;
 
-    @Autowired
+    @Steps
     GoogleConfig googleConfig;
 
 
     @Steps
-    private HomeActionsUI homeActionsUI;
+    HomeActionsUI homeActionsUI;
 
 
     public void openApp(String applicationName) {
         switch (applicationName) {
             case "Google":
-                Selenide.open("https://www.google.com/");
+                Selenide.open(googleConfig.getUrl());
                 acceptAgreementPersonalData();
                 break;
             default:

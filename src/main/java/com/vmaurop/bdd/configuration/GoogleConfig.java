@@ -8,10 +8,8 @@ import org.springframework.validation.annotation.Validated;
 import javax.validation.constraints.NotNull;
 import java.net.URL;
 
-@Validated
 @Getter
 @Setter
-@Configuration
 public class GoogleConfig {
     @NotNull
     private URL url;

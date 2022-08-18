@@ -16,6 +16,7 @@
         <lombok.version>1.18.12</lombok.version>
         <org.springframework.version>5.2.8.RELEASE</org.springframework.version>
         <net.serenity.bdd>2.1.5</net.serenity.bdd>
+        <env.properties>src/main/resources/config.yml</env.properties>
     </properties>
 
     <build>
@@ -113,6 +114,20 @@
             <version>2.12.2</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <version>2.12.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>2.12.1</version>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-autoconfigure -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -161,6 +176,12 @@
             <version>${net.serenity.bdd}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.maven/maven-model -->
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-model</artifactId>
+            <version>3.0.2</version>
+        </dependency>
 
     </dependencies>
 
