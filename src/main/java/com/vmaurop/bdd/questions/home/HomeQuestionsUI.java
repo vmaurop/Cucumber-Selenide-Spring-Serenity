@@ -16,5 +16,6 @@ public class HomeQuestionsUI extends AbstractSerenityClass implements HomeQuesti
 
     public void verifyTittleGoogle() {
         Assert.assertTrue($(MainMenu.HEADER_GOOGLE).exists());
+
     }
 }
